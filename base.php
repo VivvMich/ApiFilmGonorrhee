@@ -1,6 +1,3 @@
-<?php session_start();
-include "controller.php";
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,19 +13,27 @@ include "controller.php";
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg bg-dark">
+        <div class="container">
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">APG</a>
+            <a class="navbar-brand text-light" href="#">APG FILMS <img src="popcorn.png" alt="Logo"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
+
+            <div class="d-flex flex-grow-1 mx-5">
+                <input id="search" class="form-control mx-auto" type="search" placeholder="Rechercher un film" aria-label="Search" style="max-width: 600px;">
+                <ul class="list-group mt-2 d-flex flex-column position-absolute" id="results"></ul>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <?php if (!isset($_SESSION['name'])) { ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="view/login.php">Connexion</a>
+                            <a class="nav-link text-light" href="view/login.php">
+                                <h5>Connexion</h5>
+                            </a>
                         </li>
                     <?php } else { ?>
                         <li class="nav-item">
@@ -38,13 +43,10 @@ include "controller.php";
                             <a class="nav-link" href="view/user_profile_form.php">Profil</a>
                         </li>
                     <?php } ?>
-
                 </ul>
-                <div class=" position-relative">
-                    <input id="search" class="form-control me-2" type="search" placeholder="Rechercher un gosse" aria-label="Search">
-                    <ul class="list-group mt-2 d-flex flex-column position-absolute"
-                        id="results"></ul>
-                </div>
             </div>
         </div>
     </nav>
+</body>
+
+</html>
