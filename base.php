@@ -21,19 +21,22 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-
-            <div class="d-flex justify-content-center">
-                <div class="search d-flex flex-column mx-5">
-                    <input id="search" class="form-control mx-auto" type="search" placeholder="Rechercher un film" aria-label="Search">
-                    <ul class="list-group mt-2 d-flex flex-column position-absolute" id="results"></ul>
-                </div>
+            <div class="search d-flex w-100 flex-column mx-auto">
+                <input id="search" class="form-control" type="search" placeholder="Rechercher un film" aria-label="Search">
+                <ul class="list-group mt-2 position-absolute" id="results"></ul>
             </div>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <?php if (!isset($_SESSION['name'])) { ?>
                         <li class="nav-item">
-                            <a class="nav-link text-light" href="login.php">
+                            <a class="nav-link text-light" href="sign.php">
+                                <h5>Inscription</h5>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="login_form.php">
                                 <h5>Connexion</h5>
                             </a>
                         </li>

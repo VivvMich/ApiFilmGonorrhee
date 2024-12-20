@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1deb5ubuntu1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Hôte : localhost:3306
--- Généré le : jeu. 19 déc. 2024 à 10:11
--- Version du serveur : 8.0.40-0ubuntu0.22.04.1
--- Version de PHP : 8.3.14
+-- Hôte : 127.0.0.1
+-- Généré le : ven. 20 déc. 2024 à 10:40
+-- Version du serveur : 10.4.32-MariaDB
+-- Version de PHP : 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,13 +28,13 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `user` (
-  `id_user` int NOT NULL,
-  `firstname_user` varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
-  `lastname_user` varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
-  `mail_user` int NOT NULL,
-  `psw_user` int NOT NULL,
-  `birthday_user` int NOT NULL,
-  `image_user` varchar(100) COLLATE utf8mb4_general_ci NOT NULL
+  `id_user` int(11) NOT NULL,
+  `firstname_user` varchar(20) NOT NULL,
+  `lastname_user` varchar(20) NOT NULL,
+  `mail_user` varchar(50) NOT NULL,
+  `psw_user` int(11) NOT NULL,
+  `birthday_user` int(11) NOT NULL,
+  `image_user` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -55,7 +55,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
