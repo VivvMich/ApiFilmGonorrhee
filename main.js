@@ -46,3 +46,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }, 4000); // Ajustement du temps avant la reconstruction
 });
+
+
+
+
+

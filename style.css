@@ -12,8 +12,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
-  top: 50%;
+  position: relative;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -32,4 +32,14 @@
 .square {
   position: absolute;
   transition: opacity 1s ease-out, transform 2s ease-out;
+}
+
+.card-text { 
+  height: 150px;
+  scrollbar-color: #252835, #525870 !important ;
+
+}
+
+.card-img-top{
+  height: 400px;
 }
