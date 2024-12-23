@@ -38,3 +38,11 @@ body {
   position: absolute;
   transition: opacity 1s ease-out, transform 2s ease-out;
 }
+.card-text {
+  height: 150px;
+  scrollbar-color: #252835, #525870 !important ;
+}
+
+.card-img-top {
+  height: 400px;
+}

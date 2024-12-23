@@ -6,7 +6,7 @@ include "base.php";
     <div class="container">
         <h1 class="text-center text-primary">Inscription</h1>
 
-        <form action="sign_controller.php" method="POST" class="w-25 mx-auto" enctype="multipart/form-data">
+        <form action="sign_controller.php" method="POST" class="w-50 mx-auto" enctype="multipart/form-data">
             <label class="form-label" for="firstname_user">Prénom</label>
             <input class="form-control" type="text" name="firstname_user" placeholder="Prénom" required>
 

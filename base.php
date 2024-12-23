@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,7 +29,7 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <?php if (!isset($_SESSION['name'])) { ?>
+                    <?php if (!isset($_SESSION['firstname_user'])) { ?>
                         <li class="nav-item">
                             <a class="nav-link text-light" href="sign.php">
                                 <h5>Inscription</h5>

@@ -30,6 +30,7 @@ if (!empty($_POST['mail_user']) && !empty($_POST['psw_user'])) {
                 $_SESSION['id_user'] = $user['id_user'];
                 $_SESSION['firstname_user'] = $user['firstname_user'];
                 $_SESSION['lastname_user'] = $user['lastname_user'];
+                $_SESSION['name'] = $user['firstname_user'];
 
                 // Redirection vers la page d'accueil
                 redirectWithMessage("film_index.php", "Connexion réussie", "success");

@@ -27,7 +27,7 @@ include "base.php";
         ?>
 
 
-        <form action="login_controller.php" method="POST" class="w-25 mx-auto" enctype="multipart/form-data">
+        <form action="login_controller.php" method="POST" class="w-50 mx-auto" enctype="multipart/form-data">
             <label class="form-label" for="mail_user">Email</label>
             <input class="form-control" type="email" name="mail_user" placeholder="Email" required>
 
