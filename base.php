@@ -43,11 +43,11 @@
                         </li>
                     <?php } else { ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="logout.php">Déconnexion</a>
+                            <a class="nav-link text-light" href="logout.php">
+                                <h5>Deconnexion</h5>
+                            </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="view/user_profile_form.php">Profil</a>
-                        </li>
+
                     <?php } ?>
                 </ul>
             </div>

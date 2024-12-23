@@ -2,10 +2,10 @@
 include "base.php";
 if (isset($_SESSION['name'])) {
 ?>
-    <h1 class="red text-center">COUCOU <?= $_SESSION['name'] ?></h1>
+
 
 <?php } ?>
-
+<h1 class="text-center mt-5">Bienvenue sur la page des films</h1>
 <div id="thanos">
     <div id="container2">
         <img src="popcorn2.png" id="original-image" alt="seau de popcorn">
