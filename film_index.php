@@ -17,20 +17,27 @@ if (isset($_SESSION['name'])) {
             <li><a class="btn btn-outline-light" href="#" data-type="genre" data-value="27">Horreur</a></li>
             <li><a class="btn btn-outline-light" href="#" data-type="genre" data-value="878">Science-Fiction</a></li>
             <li><a class="btn btn-outline-light" href="#" data-type="genre" data-value="53">Thriller</a></li>
-
+            <li>
+                <select class="form-select mx-2 btn btn-outline-light" name="sort" id="sort">
+                    <option value="popularity.desc">Popularité </option>
+                    <option value="original_title.asc">Titre </option>
+                    <option value="primary_release_date.desc">Date de sortie </option>
+                </select>
+            </li>
         </ul>
     </div>
 </div>
 
 <div>
-    <h3 class="text-center mt-5">Certifications</h3>
     <div class="container d-flex justify-content-center my-4">
         <ul id="certification" class="multi_select d-flex gap-3 list-unstyled">
-
-            <li><a class="btn btn-outline-danger" href="#" data-type="certification" data-value="18">18+</a></li>
+            <?php if (isset($_SESSION['isAdult']) && $_SESSION['isAdult']) { ?>
+                <li><a class="btn btn-outline-danger" href="#" data-type="certification" data-value="18">18+</a></li>
+            <?php } ?>
         </ul>
     </div>
 </div>
+
 
 <div id="movies" class="films">
     <nav aria-label="Pagination">
@@ -60,7 +67,8 @@ if (isset($_SESSION['name'])) {
         const apiKey = '1ad85edbaf3c9e3de31ca2ecc58fcee9';
 
         async function fetchMovies(page = 1, genre = '', certification = '', adult = false, query = '') {
-            let url = `https://api.themoviedb.org/3/discover/movie?include_adult=${adult}&include_video=false&language=fr-FR&page=${page}&sort_by=popularity&with_genres=${genre}&certification_country=FR&certification=${certification}&api_key=${apiKey}`;
+            const sort = document.getElementById('sort');
+            let url = `https://api.themoviedb.org/3/discover/movie?include_adult=${adult}&sort_by=${sort.value}&include_video=false&language=fr-FR&page=${page}&with_genres=${genre}&certification_country=FR&certification=${certification}&api_key=${apiKey}`;
 
             if (query) {
                 url = `https://api.themoviedb.org/3/search/movie?query=${encodeURIComponent(query)}&include_adult=${adult}&language=fr-FR&page=${page}&api_key=${apiKey}`;
@@ -79,11 +87,13 @@ if (isset($_SESSION['name'])) {
 
                 if (data.results && data.results.length > 0) {
                     data.results.forEach(movie => {
+                        const imageURL = movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : 'image/static/placeholder.png';
                         const card = document.createElement('div');
                         card.classList.add('col-12', 'col-md-6', 'col-lg-4', 'mb-4');
                         card.innerHTML = `
-                        <div class="card mx-auto border border-warning border-2 rounded-4 overflow-hidden" style="width: 18rem;">
-                            <img class="card-img-top rounded-3" src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
+                   <div class="card mx-auto border border-warning border-2 rounded-4 overflow-hidden" style="width: 18rem;">
+                            
+                            <img class="card-img-top rounded-3" src= ${imageURL} alt="${movie.title}">
                             <div class="card-body">
                                 <h5 class="card-title">${movie.title}</h5>
                                 <p class="card-text overflow-y-auto">${movie.overview}</p>
@@ -165,6 +175,10 @@ if (isset($_SESSION['name'])) {
             currentPage++;
             fetchMovies(currentPage, currentGenre, currentCertification, includeAdult);
         });
+        sort.addEventListener('change', () => {
+            fetchMovies(currentPage, currentGenre, currentCertification, includeAdult);
+        });
+
 
 
         fetchMovies(currentPage);

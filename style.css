@@ -68,3 +68,24 @@ body {
 #movie-details {
   border-radius: 10px;
 }
+
+@media (max-width: 768px) {
+  #thanos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+  }
+  #container2 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  #original-image {
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
