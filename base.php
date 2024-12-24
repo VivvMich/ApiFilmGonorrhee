@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="http://localhost/ApiFilmGonorrhee/">
     <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script defer src="main.js"></script>
@@ -26,6 +27,7 @@
                 <input id="search" class="form-control" type="search" placeholder="Rechercher un film" aria-label="Search">
                 <ul class="list-group mt-2 position-absolute" id="results"></ul>
             </div>
+
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
