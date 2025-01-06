@@ -14,19 +14,25 @@ if (isset($_SESSION['name'])) {
             <li><a class="btn btn-outline-light" href="#" data-type="genre" data-value="12">Aventure</a></li>
             <li><a class="btn btn-outline-light" href="#" data-type="genre" data-value="35">Comédie</a></li>
             <li><a class="btn btn-outline-light" href="#" data-type="genre" data-value="14">Fantastique</a></li>
-            <li><a class="btn btn-outline-light" href="#" data-type="genre" data-value="27">Horreur</a></li>
+
+            <!-- Horreur visible uniquement pour les majeurs -->
+            <?php if (isset($_SESSION['isAdult']) && $_SESSION['isAdult']) { ?>
+                <li><a class="btn btn-outline-light" href="#" data-type="genre" data-value="27">Horreur</a></li>
+            <?php } ?>
+
             <li><a class="btn btn-outline-light" href="#" data-type="genre" data-value="878">Science-Fiction</a></li>
             <li><a class="btn btn-outline-light" href="#" data-type="genre" data-value="53">Thriller</a></li>
             <li>
                 <select class="form-select mx-2 btn btn-outline-light" name="sort" id="sort">
-                    <option value="popularity.desc">Popularité </option>
-                    <option value="original_title.asc">Titre </option>
-                    <option value="primary_release_date.desc">Date de sortie </option>
+                    <option value="popularity.desc">Popularité</option>
+                    <option value="original_title.asc">Titre</option>
+                    <option value="primary_release_date.desc">Date de sortie</option>
                 </select>
             </li>
         </ul>
     </div>
 </div>
+
 
 <div>
     <div class="container d-flex justify-content-center my-4">
